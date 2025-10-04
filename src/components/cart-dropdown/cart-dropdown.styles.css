@@ -1,0 +1,22 @@
+.cart-dropdown {
+  position: absolute;
+  width: 18em;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: #fff;
+  top: 6em;
+  right: 5.5em;
+  z-index: 5;
+}
+.cart-dropdown .cart-items {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+.cart-dropdown .button {
+  margin-top: auto;
+}/*# sourceMappingURL=cart-dropdown.styles.css.map */

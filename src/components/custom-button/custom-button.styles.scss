@@ -42,4 +42,33 @@
             border: none;
         }
     }
+    
+    &.partner-button {
+        border-radius: 5rem;
+        color: white;
+        border: none;
+        background-color: #059f82;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+
+    &.registerBtn {
+        margin-top: 1rem;
+        border: none;
+        border-radius: 6px;
+        background: #059f82;
+        color: #fff;
+        font-size: 1.3rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+
+        &:hover {
+            background: #047e66;
+            transform: translateY(-2px);
+        }
+    }
 }

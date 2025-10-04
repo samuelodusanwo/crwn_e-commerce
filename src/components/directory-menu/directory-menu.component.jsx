@@ -1,62 +1,37 @@
 import React from "react";
+import { useEffect } from "react";
 import MenuItem from '../menu-item/menu-item.component'
 import './directory-menu.style.scss'
+import { connect } from "react-redux";
+import { createStructuredSelector } from 'reselect'
+import { fetchAllStores } from "../../Redux/shop/shop-action";
+import { selectStoreSection } from "../../Redux/shop/shop-selector";
 
 
-class DirectoryMenu extends React.Component {
-    constructor() {
-        super();
-
-        this.state = {
-            sections: [{
-                title: 'hats',
-                imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
-                id: 1,
-                linkUrl: '/hats'
-            },
-            {
-                title: 'jackets',
-                imageUrl: 'https://i.ibb.co/px2tCc3/jackets.png',
-                id: 2,
-                linkUrl: '/jackets'
-            },
-            {
-                title: 'sneakers',
-                imageUrl: 'https://i.ibb.co/0jqHpnp/sneakers.png',
-                id: 3,
-                linkUrl: '/sneakers'
-            },
-            {
-                title: 'womens',
-                imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
-                id: 4,
-                linkUrl: '/women',
-                size: 'large'
-            },
-            {
-                title: 'mens',
-                imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
-                id: 5,
-                linkUrl: 'men',
-                size: 'large'
-            }]
-        }
-    }
-
-    render (){
-        return (
-            <div className="directory-menu">
+const DirectoryMenu = ({fetchAllStores, stores}) => {
+    useEffect(() => {
+        fetchAllStores()
+    }, [fetchAllStores])
+    
+    return (
+        <div className="directory-menu">
+            <h2>All Stores</h2>
+            <div className="items">
                 {
-                    this.state.sections.map(({ id, ...otherSectionProps }) => 
-                        <MenuItem 
-                            key={id} 
-                            {...otherSectionProps}
-                        />
-                    )
+                    stores.map((item) => (
+                        <MenuItem key={item.id} item={item} />
+                    ))
                 }
             </div>
-        )
-    }
+        </div>
+    )
 }
 
-export default DirectoryMenu;
+const mapDispatchToProps = (dispatch) => ({
+    fetchAllStores: () => dispatch(fetchAllStores())
+})
+
+const mapStateToProps = createStructuredSelector({
+    stores: selectStoreSection
+})
+export default connect(mapStateToProps, mapDispatchToProps)(DirectoryMenu);

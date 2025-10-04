@@ -1,0 +1,26 @@
+.hero-section {
+    display: inline-flex;
+    flex: 1 1 auto;
+    place-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 34vh;
+
+    .circle-section {
+        display: flex;
+        gap: 2rem;
+    }
+
+    @media (max-width: 428px) {
+        .hero-section {
+            width: 100%;
+            padding-top: 30rem;
+        }
+
+        .circle-section {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0rem;
+        }
+    }
+}

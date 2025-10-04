@@ -1,29 +1,44 @@
-import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
+import React from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import './menu-item.style.scss';
+import { fetchAllProduct } from '../../Redux/shop/shop-action';
 
-import './menu-item.style.scss'
+const MenuItem = ({ item, currentProduct}) => {
+    const { id, name, logo } = item
 
-const MenuItem = ({ title, imageUrl, id, size, linkUrl }) => {
     const navigate = useNavigate()
 
     const handleClick = () => {
-        navigate(linkUrl)
+        currentProduct(id)
+        navigate(`/shop/${encodeURIComponent(name.toLowerCase())}`)
     }
 
     return (
-        <div key={id} className={`${size} menu-item`}>
+        <a key={id} className={`menu-item`} onClick={handleClick}>
             <div 
                 className='background-image'
                 style={{
-                    backgroundImage: `url(${imageUrl})`
+                    backgroundImage: `url(${logo})`
                 }}
             />
             <div className="content">
-                <h1 className="title">{ title }</h1>
-                <span className="subtitle" onClick={handleClick}>SHOP NOW</span>
+                <div className='store-name'>
+                    <span className="title">{name}</span>
+                    <span className='title-name' >store</span>
+                </div>
+                {/* <div className='price'>
+                    <span>NGN 1,025.00</span>
+                    <span className='dot'></span>
+                    <span>25-35 min</span>
+                </div> */}
             </div>
-        </div>
+        </a>
     )
 }
 
-export default MenuItem;
+const mapDispatchToProps = (dispatch) => ({
+    currentProduct: (id) => dispatch(fetchAllProduct(id))
+})
+
+export default connect(null, mapDispatchToProps)(MenuItem);

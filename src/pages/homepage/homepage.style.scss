@@ -1,6 +1,15 @@
-.homepage {
+.home-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 0px;
+    min-height: 100vh;
+    background-color: #ffc243;
+
+    .home-body {
+        width: 75%;
+    }
+
+    @media (max-width: 428px) {
+        width: 100%;
+    }
 }

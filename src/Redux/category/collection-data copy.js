@@ -1,4 +1,4 @@
-export const ShopData = [
+export const collectionData = [
   {
     id: 1,
     title: 'Hats',
@@ -155,7 +155,7 @@ export const ShopData = [
   {
     id: 4,
     title: 'Womens',
-    routeName: 'womens',
+    routeName: 'women',
     items: [
       {
         id: 23,
@@ -204,7 +204,7 @@ export const ShopData = [
   {
     id: 5,
     title: 'Mens',
-    routeName: 'mens',
+    routeName: 'men',
     items: [
       {
         id: 30,

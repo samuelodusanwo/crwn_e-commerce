@@ -1,0 +1,36 @@
+.circle-category {
+    display: inline-flex;
+    width: 8rem;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    place-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    .circle-text {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        place-items: center;
+        background-color: #fff;
+        border: 3px solid #ddd;
+
+        img {
+            width: 70%;
+            height: auto;
+        }
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: 650;
+    }
+}

@@ -1,0 +1,126 @@
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    place-items: center;
+    width: 100%;
+    padding: 2em 0 5em 0;
+    color: #fff;
+    background-color: #1d1d1d;
+
+    a {
+        color: #fff;
+    }
+
+    .link-img {
+        display: none;
+    }
+
+    .logo-flex {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-flex {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .a-link {
+            display: flex;
+            gap: 1em;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+
+            .store-img {
+                display: flex;
+                width: 7em;
+                place-items: center;
+                justify-items: center;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .category-sec {
+        margin-top: 5em;
+
+        .footer-link {
+            display: flex;
+            gap: 10px;
+        }
+    }
+
+    @media (max-width: 428px) {
+        .logo-flex {
+            width: 100%;
+            padding: 1em;
+        }
+
+        .link-img {
+            justify-content: center;
+        }
+
+        .footer-flex {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .category-sec {
+            text-align: center;
+        }
+
+        .link-img {
+            display: none;
+        }
+
+        .footer-link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 768px) {
+        & {
+            padding: 0;
+        }
+        
+        .logo-flex {
+            width: 100%;
+        }
+
+        .footer-flex {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .link-img {
+            justify-content: center;
+        }
+
+        .category-sec {
+            text-align: center;
+        }
+
+        .link-img {
+            display: none;
+        }
+
+        .footer-link {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        .logo-flex {
+            width: 90%;
+        }
+
+        .link-img {
+            display: none;
+        }
+    }
+}

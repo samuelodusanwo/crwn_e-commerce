@@ -1,20 +1,30 @@
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     display: flex;
     height: 70px;
     width: 100%;
-    margin-bottom: 25px;
     align-items: center;
+    padding: 0px 12rem;
+    background-color: #ffc243;
     justify-content: space-between;
+    transition: background-color 0.3s, box-shadow 0.3;
 
+    &.white-bg {
+        background-color: #fff;
+        box-shadow: 0 0px 1px rgba(0, 0, 0, 0.8);
+    }
 
     .logo-container {
         height: 100%;
     }
 
     .logo {
-        width: 100%;
+        width: 70%;
         height: 100%;
     }
+
     .options {
         display: flex;
         width: 50%;
@@ -27,5 +37,56 @@
             padding: 10px 15px;
             cursor: pointer;
         }
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        & {
+            padding: 0px 2rem;
+        }
+
+        .options {
+            display: none;
+        }
+
+        .show-options {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            // max-height: 500px;
+            display: flex;
+            padding: 1rem;
+            flex-direction: column;
+            background-color: #ffc243;
+            justify-content: center;
+            height: auto;
+        }
+
+        .menu-icon {
+            display: block;
+            font-size: 2em;
+            cursor: pointer;
+        }
+    }
+
+
+    @media (max-width: 480px) {
+        & {
+            height: 60px;
+        }
+
+        .menu-icon {
+            font-size: 1.5em
+        }
+    }
+
+    @media (max-width: 1024px) {
+       & {
+        padding: 0 2rem;
+       }
     }
 }
