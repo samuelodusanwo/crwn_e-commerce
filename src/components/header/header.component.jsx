@@ -73,9 +73,11 @@ const Header = ({currentUser, hidden, logoutUser, totalProduct, clearCurrentUSer
                     >
                         All PRODUCTS
                     </Link>
-                    <Link to='/register-post'>
-                        POST PRODUCT
-                    </Link>
+                    { currentUser &&
+                        <Link to='/register-post'>
+                            POST PRODUCT
+                        </Link>
+                    }
                     { currentUser ? (
                         <div className='option' onClick={logout}>
                             SIGN OUT
@@ -87,7 +89,7 @@ const Header = ({currentUser, hidden, logoutUser, totalProduct, clearCurrentUSer
                         )
                     }
                     <div to='/contact'>
-                        {currentUser.username.toUpperCase()}
+                        {currentUser && currentUser.username.toUpperCase()}
                     </div>
                     {!hideCart && <CartIcon />}
             </div>

@@ -52,7 +52,6 @@ function ProtectedRoute({children}) {
     }
 
     return isAuthenticated ? children : <Navigate to="/sign-in" />
-    // return isAuthenticated ? children : children
 }
 
 export default ProtectedRoute;

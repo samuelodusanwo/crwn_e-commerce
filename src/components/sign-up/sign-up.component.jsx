@@ -187,7 +187,7 @@ const SignUp = ({switchToSignIn}) => {
           confirmPassword: ''
         });
         alert("Account created!");
-        navigate("/login"); 
+        navigate("/sign-in"); 
       } else {
         console.log(res.data?.error || "Unknown error");
       }

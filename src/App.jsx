@@ -57,7 +57,7 @@ class App extends React.Component{
           <Route path='/shop/*' element={ <ShopPage /> } />
           <Route path='/store/*' element={ <Store /> } />
           <Route path="/register-shop" element={ <ShopRegistration /> } />
-          <Route path="/register-post" element={ <PostRegistration /> } />
+          <Route path="/register-post" element={ <ProtectedRoute> <PostRegistration /> </ProtectedRoute> } />
           <Route path='/checkout' element={ <ProtectedRoute> <CheckoutPage /> </ProtectedRoute> } />
           <Route path='/sign-in' element={ this.props.currentUser ? (<Navigate to='/' />) : <RegisterAndLogout /> } />
           <Route path='*' element={ <NotFound /> } />

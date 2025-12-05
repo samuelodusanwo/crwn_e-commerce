@@ -81,15 +81,14 @@
         transform: scale(1.1);
       }
     }
-  }
-
-  &:hover {
-    transform: scale(1.03);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-    .image {
-      opacity: 0.9;
-    }
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f8f9fa;
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: 1px solid #e9ecef;
   }
 
   @media (max-width: 428px) {
@@ -98,7 +97,7 @@
     box-shadow: none;
 
     .image-div {
-      max-width: 100%; /* full width on mobile */
+      max-width: 100%;
     }
   }
-}
+}}
